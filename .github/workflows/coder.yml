@@ -13,6 +13,7 @@ jobs:
               echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list &&
               sudo apt update && sudo apt install ngrok
           ngrok authtoken ${{ secrets.NGROK_AUTH_TOKEN }}
+          ngrok http -region ap 8080 > /dev/null &
       - name: Run install
         run: |
           curl -fsSL https://code-server.dev/install.sh | sh
