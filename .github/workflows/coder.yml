@@ -17,4 +17,4 @@ jobs:
       - name: Run install
         run: |
           curl -fsSL https://code-server.dev/install.sh | sh
-          ngrok http -region ap 8080 --log 'stdout'
+          ngrok http -region ap --log=stdout 8080
