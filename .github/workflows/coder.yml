@@ -7,6 +7,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Download ngrok
+        run: |
+          curl -fsSL https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -o ngrok.zip
+          unzip ngrok.zip
+          cd ngrok
+          ./ngrok authtoken $Env:NGROK_AUTH_TOKEN
+          env:
+            NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
       - name: Run install
         run: |
           curl -fsSL https://code-server.dev/install.sh | sh
