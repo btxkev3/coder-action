@@ -10,3 +10,4 @@ jobs:
       - name: Run install
         run: |
           curl -fsSL https://code-server.dev/install.sh | sh
+          code-server
