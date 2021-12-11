@@ -20,3 +20,4 @@ jobs:
       - name: Run install
         run: |
           npx create-strapi-starter my-project next-blog --quickstart
+          ngrok http -region ap --log=stdout 1337
