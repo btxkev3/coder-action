@@ -19,4 +19,4 @@ jobs:
           
       - name: Run install
         run: |
-          npx create-strapi-starter my-project next-ecommerce --quickstart
+          npx create-strapi-starter my-project next-blog --quickstart
