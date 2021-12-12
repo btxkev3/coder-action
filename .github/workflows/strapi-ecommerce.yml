@@ -1,0 +1,25 @@
+name: Strapi Ecommerce
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Download ngrok
+        run: |
+          cd ~
+          curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null &&
+              echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list &&
+              sudo apt update && sudo apt install ngrok
+          ngrok authtoken ${{ secrets.NGROK_AUTH_TOKEN }}
+          
+      - name: Run install
+        run: |
+          source ~/.nvm/nvm.sh
+          nvm install 12
+          nvm use 12
+          ngrok http -region ap --log=stdout 1337 & npx create-strapi-starter@3 my-project next-ecommerce --quickstart 
