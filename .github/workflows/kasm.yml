@@ -27,5 +27,5 @@ jobs:
           cd /tmp
           wget https://kasm-static-content.s3.amazonaws.com/kasm_release_1.10.0.238225.tar.gz
           tar -xf kasm_release*.tar.gz
-          sudo docker run --rm  -it --shm-size=512m -p 6901:6901 -e VNC_PW=password kasmweb/brave:1.10.0
+          sudo docker run --rm -d -it --shm-size=512m -p 6901:6901 -e VNC_PW=password kasmweb/brave:1.10.0
           ngrok http -region ap --log=stdout https://localhost:6901
