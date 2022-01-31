@@ -27,5 +27,5 @@ jobs:
             -p 3000:3000 \
             --shm-size="4gb" `#optional` \
             --restart unless-stopped \
-            lscr.io/linuxserver/webtop
-          ngrok http -region ap --log=stdout https://localhost:3000
+            lscr.io/linuxserver/webtop:ubuntu-kde
+          ngrok http -region ap --log=stdout 3000
