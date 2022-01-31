@@ -28,4 +28,4 @@ jobs:
             --shm-size="4gb" \
             --restart unless-stopped \
             lscr.io/linuxserver/firefox
-          ngrok http -region ap --log=stdout https://localhost:3000
+          ngrok http -region ap --log=stdout 3000
