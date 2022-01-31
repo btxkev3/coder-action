@@ -21,6 +21,7 @@ jobs:
         run: |
           docker run -d \
             --name=webtop \
+            --privileged `#optional` \
             -e PUID=1000 \
             -e PGID=1000 \
             -e TZ=Asia/Singapore \
