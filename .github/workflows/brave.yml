@@ -1,4 +1,4 @@
-name: KASM
+name: Brave
 
 on: workflow_dispatch
 
