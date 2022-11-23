@@ -26,7 +26,7 @@ jobs:
             -e PGID=1000 \
             -e TZ=Asia/Singapore \
             -p 3000:3000 \
-            --shm-size="4gb" `#optional` \
+            --shm-size="8gb" `#optional` \
             --restart unless-stopped \
             lscr.io/linuxserver/webtop:ubuntu-kde
-          ngrok http -region ap --log=stdout 3000
+          ngrok http --region ap --log=stdout 3000
